@@ -55,21 +55,6 @@
                         <a href="{{route('product.create')}}" 
                            class="btn btn-default btn-sm pull-right">
                             <span class="glyphicon glyphicon-plus"></span> Adicionar</a>
-                        <a href="" 
-                           class="btn btn-default btn-sm pull-right">
-                            <i class="fa fa-book"></i> Relatório</a>
-                        <div id="pesquisa" class="pull-right">
-                            <form class="form-group" method="post" 
-                                  action="#">                                   
-                                <input type="text" name="pesquisar" 
-                                       class="form-control input-sm pull-left" 
-                                       placeholder="Pesquisar por nome..." required> 
-                                <button class="btn btn-default btn-sm pull-right" 
-                                        id="color"> 
-                                    <span class="glyphicon glyphicon-search"></span>
-                                </button>
-                            </form>
-                        </div>
                     </div>           
                 </div>
                 <div class="row">
@@ -85,8 +70,8 @@
                                         <th>Nome</th>
                                         <th>Descrição</th>
                                         <th id="center">Quantidade</th>
-                                        <th>Preço</th>                
-                                        <th id="center">Imagem</th>                
+                                        <th id="center">Preço custo</th>
+                                        <th>Preço venda</th>                            
                                         <th id="center">Ações</th>                
                                     </tr>
                                 </thead>
@@ -97,13 +82,9 @@
                                         <td title="Nome">{{$produto->name}}</td>
                                         <td title="Descrição">{{$produto->description}}</td>
                                         <td title="Quantidade" id="center">{{$produto->quantity}}</td>
-                                        <td title="Preço custo">R$ {{number_format($produto->price, 2,',','.')}}</td> 
+                                        <td title="Preço custo">R$ {{number_format($produto->price_cost, 2,',','.')}}</td> 
                                         <td title="Preço venda">R$ {{number_format($produto->price, 2,',','.')}}</td>
-                                        <td id="center">
-                                            <a href="{{URL::asset('produtos/'. '1' . $produto->imagem)}}" 
-                                               data-lightbox="{{URL::asset('produtos/'. '1' . $produto->imagem)}}">
-                                                <img src="{{URL::asset('produtos/'. $produto->imagem)}}" />
-                                            </a></td>
+                                      
                                         <td id="center">
                                             <a href="{{route('product.edit', $produto->id)}}" 
                                                data-toggle="tooltip" 

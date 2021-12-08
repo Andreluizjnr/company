@@ -22,8 +22,8 @@ class ProdutoController extends Controller
         $product->name = $request->name;
         $product->description = $request->description;
         $product->quantity = $request->quantity;
+        $product->price_cost= $request->price_cost;
         $product->price = $request->price;
-        $product->imagem = $request->imagem;
         $product->save();
         return redirect()->route('product.index')->with('message', 'Produto criado com sucesso!');
     }
@@ -43,6 +43,7 @@ class ProdutoController extends Controller
         $product->description = $request->description;
         $product->quantity = $request->quantity;
         $product->price = $request->price;
+        $product->price_cost = $request->price_cost;
         $product->save();
         return redirect()->route('product.index')->with('message', 'Produto alterado com sucesso!');
     }

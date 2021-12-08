@@ -85,9 +85,11 @@
                         </div>                 
                         <div class="col-md-6">
                           <div class="form-group">
-                              <label for="price"> Preço custo</label>
-                              <input type="text" name="price"                               
-                                     class="form-control">
+                              <label for="price_cost"> Preço custo</label>
+                              <input type="text" name="price_cost"                               
+                                     class="form-control"
+                                     value="{{$product->price_cost or old('price_cost')}}"
+                                     required>
                           </div>
                       </div>   
                       
@@ -95,7 +97,9 @@
                         <div class="form-group">
                             <label for="price"> Preço venda</label>
                             <input type="text" name="price"                               
-                                   class="form-control">
+                                   class="form-control"
+                                   value="{{$product->price or old('price')}}"
+                                     required>
                         </div>
                         </div>                       
                         <div class="col-md-12">                   

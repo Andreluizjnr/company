@@ -78,7 +78,7 @@
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label for="price"> Preço custo</label>
-                                <input type="text" name="price"                               
+                                <input type="text" name="price_cost"                               
                                        class="form-control">
                             </div>
                         </div>   
